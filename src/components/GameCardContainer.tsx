@@ -7,9 +7,14 @@ interface Props {
 
 const GameCardContainer = ({ children }: Props) => {
   return (
-    <Flex flexGrow="grow" w="100%" overflow="hidden" borderRadius="8px">
+    <Box
+      boxShadow="0 0 4px 2px rgba(0,0,0,0.1)"
+      overflow="hidden"
+      border="1px solid rgba(0,0,0,0.2)"
+      borderRadius="8px"
+    >
       {children}
-    </Flex>
+    </Box>
   );
 };
 
