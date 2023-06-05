@@ -9,6 +9,7 @@ import {
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./gameCardSkeleton";
+import GameCardContainer from "./GameCardContainer";
 
 const GameGrid = () => {
   const { games, error, loading } = useGames();
@@ -18,6 +19,7 @@ const GameGrid = () => {
     <>
       {error && <Text>{error}</Text>}
       <SimpleGrid
+        justifyContent="space-between"
         columns={{
           sm: 1,
           md: 2,
@@ -29,9 +31,13 @@ const GameGrid = () => {
       >
         {games.map((game) => {
           return loading ? (
-            <GameCardSkeleton key={game.id} />
+            <GameCardContainer>
+              <GameCardSkeleton key={game.id} />
+            </GameCardContainer>
           ) : (
-            <GameCard key={game.id} game={game} />
+            <GameCardContainer>
+              <GameCard key={game.id} game={game} />
+            </GameCardContainer>
           );
         })}
       </SimpleGrid>
