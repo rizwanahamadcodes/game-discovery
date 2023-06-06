@@ -39,7 +39,9 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                     selectedGenre?.id === genre.id ? "bold" : "normal"
                   }
                 >
-                  {genre.name}
+                  {genre.name.length >= 12
+                    ? genre.name.substring(0, 12) + "..."
+                    : genre.name}
                 </Button>
               </HStack>
             </ListItem>
