@@ -12,6 +12,7 @@ const GameCardContainer = ({ children }: Props) => {
       overflow="hidden"
       border="1px solid rgba(0,0,0,0.2)"
       borderRadius="8px"
+      width="100%"
     >
       {children}
     </Box>
